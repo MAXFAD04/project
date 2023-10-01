@@ -52,7 +52,7 @@ namespace FoxHunter {
 
 	protected:
 		/// <summary>
-		/// ќсвободить все используемые ресурсы.
+		/// Release all used resources.
 		/// </summary>
 		~MyForm() {
 			if (components) {
@@ -82,14 +82,16 @@ namespace FoxHunter {
 
 	private:
 		/// <summary>
-		/// ќб€зательна€ переменна€ конструктора.
+		/// 
+		Required constructor variable.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// “ребуемый метод дл€ поддержки конструктора Ч не измен€йте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// 
+		///Required method for constructor support - do not change
+		/// the contents of this method using the code editor.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -253,7 +255,7 @@ namespace FoxHunter {
 			bool foxes = 0;
 		};
 
-		// ‘ункци€ Start - иннициализаци€ новой игры
+		// Start function - initialization of a new game
 		private: System::Void btnStart_Click(System::Object^ sender, System::EventArgs^ e) {
 
 			this->MainPanel->Enabled = true;
@@ -315,7 +317,7 @@ namespace FoxHunter {
 			this->CenterToScreen();
 		}
 
-	    // ‘ункци€ при нажатии на €чейке
+	    // Function when clicking on a cell
 		private: System::Void FoxCell_Click(System::Object^ sender, System::EventArgs^ e) {			
 			
 			FoxCell^ cell = safe_cast<FoxCell^>(sender);
@@ -356,12 +358,12 @@ namespace FoxHunter {
 			}
 		}
 
-	    // ќбновить инфостроку
+	    // Update info line
 		private: System::Void UpdateStatusBar() {
-			this->StatusBar->Text = "Ќайдено: " + foundedFox + " из " + foxCount + "     Ўагов: " + gameSteps;
+			this->StatusBar->Text = "found: " + foundedFox + " from " + foxCount + "     Steps: " + gameSteps;
 		}
 
-	    // ѕереленг лис от клетки с координатами
+	    // Reeling the foxes from the cage with coordinates
 		private: System::Void PelengFoxCountInCells(int x, int y) {
 			FoxCell^ cell = safe_cast<FoxCell^>(this->MainPanel->Controls->Find("btnCell" + x + "_" + y, true)[0]);
 			if (!cell->clicked || cell->fox) return;
@@ -379,7 +381,7 @@ namespace FoxHunter {
 			}
 		}
 
-		// ѕерерасчет количества лис при найденой лисе в открытых €чейках (только дл€ простого уровн€)
+		// Recalculation of the number of foxes when a fox is found in open cells (only for a simple level)
 		private: System::Void CellsUpdate(int x, int y) {
 			if (!simple_level) return;
 			for (int i = 0; i < fieldSize; i++) {
@@ -390,7 +392,7 @@ namespace FoxHunter {
 			}			
 		}
 
-		// «акрашивание серым €чеек, где не может быть лис (только дл€ простого уровн€)
+		// Graying out cells where there cannot be foxes (simple level only)
 		private: System::Void DisableCells(int x, int y) {
 			if (!simple_level) return;
 			for (int i = 0; i < fieldSize; i++) {
