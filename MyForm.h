@@ -41,7 +41,7 @@ namespace FoxHunter {
 
 
 	/// <summary>
-	/// Сводка для MyForm
+	/// пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ MyForm
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
@@ -52,7 +52,7 @@ namespace FoxHunter {
 
 	protected:
 		/// <summary>
-		/// Освободить все используемые ресурсы.
+		/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 		/// </summary>
 		~MyForm() {
 			if (components) {
@@ -82,14 +82,14 @@ namespace FoxHunter {
 
 	private:
 		/// <summary>
-		/// Обязательная переменная конструктора.
+		/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
 		/// </summary>
 
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Требуемый метод для поддержки конструктора — не изменяйте 
-		/// содержимое этого метода с помощью редактора кода.
+		/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ 
+		/// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -253,7 +253,7 @@ namespace FoxHunter {
 			bool foxes = 0;
 		};
 
-		// Функция Start - иннициализация новой игры
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅ Start - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
 		private: System::Void btnStart_Click(System::Object^ sender, System::EventArgs^ e) {
 
 			this->MainPanel->Enabled = true;
@@ -285,7 +285,7 @@ namespace FoxHunter {
 			}
 
 			generate_foxes();
-			this->UpdateStatusBar();
+			this->UpdateStatusBar(); //  РѕР±РЅРѕРІР»РµРЅРёРµ СЃС‚Р°С‚СѓСЃ СЃС‚СЂРѕРєРё
 
 			for (int x = 0; x < fieldSize; x++)
 				for (int y = 0; y < fieldSize; y++)
@@ -315,7 +315,7 @@ namespace FoxHunter {
 			this->CenterToScreen();
 		}
 
-	    // Функция при нажатии на ячейке
+	    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 		private: System::Void FoxCell_Click(System::Object^ sender, System::EventArgs^ e) {			
 			
 			FoxCell^ cell = safe_cast<FoxCell^>(sender);
@@ -339,7 +339,7 @@ namespace FoxHunter {
 				}
 				if (foundedFox == foxCount) {
 					this->MainPanel->Enabled = false;
-					this->StatusBar->Text = "Игра закончена. Найдено лис: " + foxCount + ". Шагов: " + gameSteps;
+					this->StatusBar->Text = "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ. пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ: " + foxCount + ". пїЅпїЅпїЅпїЅпїЅ: " + gameSteps;
 					return;
 				}
 			}
@@ -356,12 +356,12 @@ namespace FoxHunter {
 			}
 		}
 
-	    // Обновить инфостроку
+	    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		private: System::Void UpdateStatusBar() {
-			this->StatusBar->Text = "Найдено: " + foundedFox + " из " + foxCount + "     Шагов: " + gameSteps;
+			this->StatusBar->Text = "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ: " + foundedFox + " пїЅпїЅ " + foxCount + "     пїЅпїЅпїЅпїЅпїЅ: " + gameSteps;
 		}
 
-	    // Переленг лис от клетки с координатами
+	    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 		private: System::Void PelengFoxCountInCells(int x, int y) {
 			FoxCell^ cell = safe_cast<FoxCell^>(this->MainPanel->Controls->Find("btnCell" + x + "_" + y, true)[0]);
 			if (!cell->clicked || cell->fox) return;
@@ -379,7 +379,7 @@ namespace FoxHunter {
 			}
 		}
 
-		// Перерасчет количества лис при найденой лисе в открытых ячейках (только для простого уровня)
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ)
 		private: System::Void CellsUpdate(int x, int y) {
 			if (!simple_level) return;
 			for (int i = 0; i < fieldSize; i++) {
@@ -390,7 +390,7 @@ namespace FoxHunter {
 			}			
 		}
 
-		// Закрашивание серым ячеек, где не может быть лис (только для простого уровня)
+		// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ)
 		private: System::Void DisableCells(int x, int y) {
 			if (!simple_level) return;
 			for (int i = 0; i < fieldSize; i++) {
